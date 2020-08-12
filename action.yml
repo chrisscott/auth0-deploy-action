@@ -1,0 +1,21 @@
+name: Auth0 Deploy
+description: deploy using the Auth0 deploy-cli
+author: Chris Scott
+
+inputs:
+  auth0_domain:
+    description: Auth0 tenant domain
+    required: true
+  auth0_client_id:
+    description: auth0-deploy-cli-extension client id
+    required: true
+  auth0_client_secret:
+    description: auth0-deploy-cli-extension client secret
+    required: true
+  auth0_input_file:
+    description: deploy input file (yaml) or path (directory)
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

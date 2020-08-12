@@ -1,0 +1,26 @@
+{
+  "name": "auth0-deploy-action",
+  "version": "1.0.0",
+  "description": "Auth0 Deploy CLI GitHub Action",
+  "main": "index.ts",
+  "scripts": {
+    "package": "ncc build index.ts -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisscott/auth0-deploy-action.git"
+  },
+  "author": "Chris Scott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisscott/auth0-deploy-action/issues"
+  },
+  "homepage": "https://github.com/chrisscott/auth0-deploy-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "auth0-deploy-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
+  }
+}
