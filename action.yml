@@ -3,21 +3,18 @@ description: deploy or import using the Auth0 deploy-cli
 author: Chris Scott
 
 inputs:
-  domain:
-    description: Auth0 tenant domain
-    required: true
-  client_id:
-    description: auth0-deploy-cli-extension client id
-    required: true
-  client_secret:
-    description: auth0-deploy-cli-extension client secret
-    required: true
-  input_file:
-    description: deploy-cli input file (yaml) or path (directory)
-    required: true
   deploy_command:
-    description: "deploy-cli command to run. One of: import, deploy, export, or dump."
+    description: "The deploy-cli command to run. One of: import, deploy, export, or dump."
     required: true
+  input:
+    description: Path to tenant.yaml or to a directory structure, depending on configuration.
+    required: true
+  format:
+    description: "Output format: yaml or directory"
+    required: true
+  output:
+    description: Output path for the export/dump command.
+    required: false
 
 runs:
   using: "node12"

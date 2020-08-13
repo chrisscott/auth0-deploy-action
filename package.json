@@ -2,9 +2,10 @@
   "name": "auth0-deploy-action",
   "version": "1.0.0",
   "description": "Auth0 Deploy CLI GitHub Action",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "package": "ncc build index.ts -o dist"
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,21 @@
   "homepage": "https://github.com/chrisscott/auth0-deploy-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
-    "auth0-deploy-cli": "^5.1.4"
+    "auth0-deploy-cli": "^5.1.5"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3"
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.25",
+    "@typescript-eslint/parser": "^3.9.0",
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.6.0",
+    "eslint-plugin-github": "^4.1.1",
+    "eslint-plugin-jest": "^23.20.0",
+    "jest": "^26.4.0",
+    "jest-circus": "^26.4.0",
+    "js-yaml": "^3.14.0",
+    "ts-jest": "^26.2.0",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.7"
   }
 }
