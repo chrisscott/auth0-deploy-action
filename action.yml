@@ -1,19 +1,22 @@
-name: Auth0 Deploy
-description: deploy using the Auth0 deploy-cli
+name: Auth0 Deploy CLI
+description: deploy or import using the Auth0 deploy-cli
 author: Chris Scott
 
 inputs:
-  auth0_domain:
+  domain:
     description: Auth0 tenant domain
     required: true
-  auth0_client_id:
+  client_id:
     description: auth0-deploy-cli-extension client id
     required: true
-  auth0_client_secret:
+  client_secret:
     description: auth0-deploy-cli-extension client secret
     required: true
-  auth0_input_file:
-    description: deploy input file (yaml) or path (directory)
+  input_file:
+    description: deploy-cli input file (yaml) or path (directory)
+    required: true
+  deploy_command:
+    description: "deploy-cli command to run. One of: import, deploy, export, or dump."
     required: true
 
 runs:
