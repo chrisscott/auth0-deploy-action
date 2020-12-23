@@ -1,5 +1,5 @@
 import { getInput, setFailed } from "@actions/core";
-import { deploy, dump } from "auth0-deploy-cli";
+import { deploy, dump, info } from "auth0-deploy-cli";
 
 async function run(): Promise<void> {
   try {
@@ -19,12 +19,14 @@ async function run(): Promise<void> {
     switch (deployCommand) {
       case "import":
       case "deploy":
+        info(`Deploying to ${process.env.AUTH0_DOMAIN}`);
         await deploy({
           input_file,
         });
         break;
       case "export":
       case "dump":
+        info(`Exporting to ${process.env.AUTH0_DOMAIN}`);
         dump({
           output_folder,
           format,
