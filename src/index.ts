@@ -1,5 +1,5 @@
-import { getInput, setFailed } from "@actions/core";
-import { deploy, dump, info } from "auth0-deploy-cli";
+import { getInput, setFailed, info } from "@actions/core";
+import { deploy, dump } from "auth0-deploy-cli";
 
 async function run(): Promise<void> {
   try {
