@@ -16,17 +16,19 @@ async function run(): Promise<void> {
       required: false,
     });
 
+    const domain = process.env.AUTH0_DOMAIN;
+
     switch (deployCommand) {
       case "import":
       case "deploy":
-        info(`Deploying to ${process.env.AUTH0_DOMAIN}`);
+        info(`Deploying to ${domain}`);
         await deploy({
           input_file,
         });
         break;
       case "export":
       case "dump":
-        info(`Exporting to ${process.env.AUTH0_DOMAIN}`);
+        info(`Exporting to ${domain}`);
         dump({
           output_folder,
           format,
